@@ -1,0 +1,13 @@
+{
+  "addons": {
+    "hangar-exporter@dragonkeep.invalid": {
+      "updates": [
+        {
+          "version": "0.5.0",
+          "update_link": "https://github.com/Drachennarr/Hangar-Exporter-Releases/releases/download/v0.5.0/ddb5c5ab59c744a0acca-0.5.0.xpi",
+          "update_hash": "sha256:09da458dd779982656e0322170a7a866b620bf62d1db308ae8b44b6f9e38d60b"
+        }
+      ]
+    }
+  }
+}

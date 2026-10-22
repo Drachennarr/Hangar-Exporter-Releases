@@ -1,0 +1,16 @@
+# Sicherheit
+
+## Schwachstellen melden
+
+Bitte nicht als öffentliches Ticket und nicht per Chat-Nachricht mit Einzelheiten, sondern über **GitHub: Security > Report a vulnerability** in diesem Repository. Die Meldung ist privat und nur für den Inhaber sichtbar. Genannt werden sollten: betroffene Version, Schritte zum Nachstellen, erwartete und tatsächliche Wirkung. Ein Beweis ohne echte Zugangsdaten reicht.
+
+Der Inhaber bestätigt eine Meldung so schnell wie möglich. Ein Fehler in der Behandlung der Basetool-Anmeldung (Token, Schlüssel) wird mit einer neuen Version behoben.
+
+## Grundsätze des Projekts
+
+- **Nur lesen.** Die Erweiterung ruft bei RSI ausschließlich Hangar- und Buy-back-Seiten des eigenen Kontos und die öffentliche Schiffsliste ab und ändert dort nichts.
+- **Nur dahin, wohin du sendest.** Verbindungen gehen zu `robertsspaceindustries.com` (Lesen), zu `127.0.0.1` (Senden an VerseKit auf demselben Rechner) und, wenn du das Basetool als Ziel nutzt, zu dessen Anmelde- und Datenadresse (`profit-base.online` für die Anmeldung, `ingest.profit-base.online` für die Daten). Gelesen und gesendet wird erst, wenn du im Fenster **Hangar lesen** drückst, und immer an genau ein Ziel. Beim Basetool lösen zusätzlich nur **Anmelden** (mit der Meldung der gewählten Bezeichnung nach der Anmeldung) und **Trennen** Verbindungen aus. Die Vorschau nach **Hangar lesen** liest beim Basetool (Schiffe, Zuordnung der Schiffstypen) und schreibt nichts, geschrieben wird erst mit **Jetzt senden**. Die Erweiterung selbst ruft keine weitere Adresse auf. Nur Firefox fragt die Update-Adresse im Manifest des Firefox-Pakets ab (`gecko.update_url`, eine feste Adresse in diesem Repository).
+- **Nie im Export:** Zugangsdaten, Sitzungs-Token, Seriennummern und Rechnungs- und Zahlungsseiten. **Zum Basetool** gehen außerdem nie Kaufpreise, Kaufdaten oder Pledge-Nummern im Klartext. Die Dateien und die Schiffsliste für VerseKit enthalten dagegen Angaben wie Pledge-Nummer, Kaufdatum und Preis; Gutscheincodes sind standardmäßig geschwärzt, Spitznamen weggelassen (in der Datei und beim Basetool nur mit eigenem Haken).
+- **Basetool-Anmeldung:** Geräte-Anmeldung (Device Flow) mit Nachweis pro Anfrage (DPoP, ES256). Der Schlüssel ist nicht exportierbar und liegt in der Datenbank der Erweiterung. Der Zugriffsschlüssel (Refresh-Token) liegt nur im Speicher der Erweiterung auf dem eigenen Rechner, nie in dem Speicher, den der Browser über das Konto abgleicht. Nichts davon erscheint in Protokollen oder Meldungen. **Trennen** widerruft den Zugriffsschlüssel beim Basetool (soweit erreichbar) und löscht alles Gespeicherte. Die Erweiterung hat keinen Zugriff auf die Web-Sitzung des Basetool.
+- **Kleine Angriffsfläche:** Berechtigungen nur `storage`, `http://127.0.0.1/*` und `https://ingest.profit-base.online/*` (kein Recht für die Anmeldeadresse und nicht für die Weboberfläche des Basetool), dazu ein Skript, das nur auf den Hangar-Seiten bei RSI (`robertsspaceindustries.com/account/pledges`) läuft; der Browser zeigt dafür den Zugriff auf diese Seiten an. Keine Fremdbibliotheken, kein `eval`, kein `innerHTML`, kein nachgeladener Code.
+- **Pakete:** Zu den veröffentlichten Dateien gibt es Prüfsummen (`SHA256SUMS.txt`). Die Firefox-Fassung ist zusätzlich von Mozilla signiert. Der Quelltext liegt lesbar in den Paketen.
