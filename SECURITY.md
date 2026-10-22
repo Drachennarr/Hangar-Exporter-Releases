@@ -4,7 +4,7 @@
 
 Bitte nicht als öffentliches Ticket und nicht per Chat-Nachricht mit Einzelheiten, sondern über **GitHub: Security > Report a vulnerability** in diesem Repository. Die Meldung ist privat und nur für den Inhaber sichtbar. Genannt werden sollten: betroffene Version, Schritte zum Nachstellen, erwartete und tatsächliche Wirkung. Ein Beweis ohne echte Zugangsdaten reicht.
 
-Der Inhaber bestätigt eine Meldung so schnell wie möglich. Ein Fehler in der Behandlung der Basetool-Anmeldung (Token, Schlüssel) wird mit einer neuen Version behoben.
+Der Inhaber bestätigt eine Meldung so schnell wie möglich. Ein Fehler in der Behandlung der Basetool-Anmeldung (Token, Schlüssel) wird innerhalb von 7 Tagen in einer veröffentlichten Fassung behoben; ein Release auf GitHub genügt dafür.
 
 ## Grundsätze des Projekts
 
