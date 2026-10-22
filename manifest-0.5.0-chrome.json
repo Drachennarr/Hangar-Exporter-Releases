@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "Hangar-Exporter",
+  "version": "0.5.0",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnzWlDpwhagWoZREaQME6eWXRRI4aJ9iI8OT5t63bMZou4ll5PoHCj5p49bZmYrfSfyCUDeTU72DTOk6SRukzHQnYSiE5mcxDEmsBCm5mdiC313V2jpEhSdhwS1vBkntRe741lE5vsR+bkcnZf68Pe6kgVgkEzgsIGDRSmIAzQe7LIeuOBWeDX+I9dqZXP8gdsHHa7/rOHsrPE9+Ni+QqsFjCIq/FRQ0ver2YoI7++0U3w6Hzp9Sl0oEFvct84RHUhgHOV+pk6wKp7fcP3QcCJizRxqbi8GN2uemjFoWSgIEkJZuv5AT53dw6Ph7+kClc3EehPE7yMb1fedTqaMXk9QIDAQAB",
+  "description": "Liest deinen Hangar bei RSI. Speichert ihn als Datei oder sendet ihn nur auf Knopfdruck an VerseKit oder das Basetool.",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1/*",
+    "https://ingest.profit-base.online/*"
+  ],
+  "background": {
+    "service_worker": "hintergrund/hintergrund.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://robertsspaceindustries.com/account/pledges*",
+        "https://robertsspaceindustries.com/*/account/pledges*"
+      ],
+      "js": [
+        "src/baum.js",
+        "src/seite.js",
+        "src/buyback.js",
+        "src/schiffswerte.js",
+        "src/schiffsliste.js",
+        "src/uebergabe.js",
+        "src/schiffsexport.js",
+        "src/basetoolliste.js",
+        "src/hangarlink.js",
+        "src/sammler.js",
+        "src/inhalt.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
