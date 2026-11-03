@@ -25,7 +25,12 @@ Die neueste Fassung findest du unter **[Releases](https://github.com/Drachennarr
 
 **Firefox:** Die `.xpi`-Datei herunterladen und in das Firefox-Fenster ziehen (oder `about:addons` öffnen, auf das Zahnrad klicken und **Add-on aus Datei installieren** wählen). Firefox aktualisiert die Erweiterung danach selbst. Wenn das Senden an VerseKit oder das Basetool nicht klappt, prüfe unter `about:addons` > **Hangar-Exporter** > **Berechtigungen**, ob der Zugriff auf `127.0.0.1` und `ingest.profit-base.online` erlaubt ist.
 
-**Chrome und Edge:** Das Zip in einen eigenen Ordner entpacken, in `chrome://extensions` (Edge: `edge://extensions`) oben rechts den **Entwicklermodus** einschalten, **Entpackte Erweiterung laden** wählen und den Ordner angeben. Der Ordner muss an seinem Platz bleiben: Wer ihn löscht oder verschiebt, deaktiviert die Erweiterung. Der Browser warnt bei jedem Start vor Erweiterungen im Entwicklermodus. Die Erweiterung hat eine feste Kennung (`hgmnaolojobpmeieccpholmjacbjkpbm`), auch beim Laden als entpackter Ordner. Für eine neue Version den alten Eintrag entfernen und die neue Fassung laden, oder den vorhandenen Eintrag mit dem Neu-laden-Knopf aktualisieren, nachdem du den Ordner ersetzt hast; Chrome und Edge aktualisieren sie nicht von selbst.
+**Chrome und Edge:** Das Zip in einen eigenen Ordner entpacken (Rechtsklick > **Alle extrahieren**). Dann:
+
+- **Chrome:** `chrome://extensions` öffnen, oben rechts den **Entwicklermodus** einschalten, **Entpackte Erweiterung laden** wählen und den Ordner angeben.
+- **Edge:** `edge://extensions` öffnen, links unten in der Seitenleiste den **Entwicklermodus** einschalten (bei schmalem Fenster erst oben links das Menü ☰ aufklappen), dann oben **Entpackte Dateien laden** wählen und den Ordner angeben.
+
+Anzugeben ist der Ordner, in dem die `manifest.json` liegt. Der Ordner muss an seinem Platz bleiben: Wer ihn löscht oder verschiebt, deaktiviert die Erweiterung. Der Browser warnt bei jedem Start vor Erweiterungen im Entwicklermodus. Auf verwalteten Rechnern (Firma, Schule) kann der Entwicklermodus gesperrt sein. Die Erweiterung hat eine feste Kennung (`hgmnaolojobpmeieccpholmjacbjkpbm`), auch beim Laden als entpackter Ordner. Für eine neue Version den alten Eintrag entfernen und die neue Fassung laden, oder den vorhandenen Eintrag mit dem Neu-laden-Knopf (Edge: **Erneut laden**) aktualisieren, nachdem du den Ordner ersetzt hast; Chrome und Edge aktualisieren sie nicht von selbst.
 
 **Prüfsumme prüfen** (PowerShell, im Ordner der heruntergeladenen Datei; `<Dateiname>` ersetzen):
 
