@@ -25,7 +25,7 @@ Die neueste Fassung findest du unter **[Releases](https://github.com/Drachennarr
 
 **Firefox:** Die `.xpi`-Datei herunterladen und in das Firefox-Fenster ziehen (oder `about:addons` öffnen, auf das Zahnrad klicken und **Add-on aus Datei installieren** wählen). Firefox aktualisiert die Erweiterung danach selbst. Wenn das Senden an VerseKit oder das Basetool nicht klappt, prüfe unter `about:addons` > **Hangar-Exporter** > **Berechtigungen**, ob der Zugriff auf `127.0.0.1` und `ingest.profit-base.online` erlaubt ist.
 
-**Chrome und Edge (empfohlen): aus dem Chrome Web Store.** Die Erweiterung steht im [Chrome Web Store](https://chromewebstore.google.com/detail/hgmnaolojobpmeieccpholmjacbjkpbm). Ein Entwicklermodus ist dafür nicht nötig, und der Browser aktualisiert die Erweiterung danach selbst.
+**Chrome und Edge (empfohlen): aus dem Chrome Web Store.** Die Erweiterung steht im [Chrome Web Store](https://chromewebstore.google.com/detail/hangar-exporter/hgmnaolojobpmeieccpholmjacbjkpbm). Ein Entwicklermodus ist dafür nicht nötig, und der Browser aktualisiert die Erweiterung danach selbst.
 
 - **Chrome:** Die Store-Seite öffnen und **Hinzufügen** wählen.
 - **Edge:** Die Store-Seite in Edge öffnen. Oben erscheint ein Hinweis, dort **Erweiterungen aus anderen Stores zulassen** und **Zulassen** wählen. Danach **Hinzufügen** wählen. Edge benutzt dabei dieselbe Fassung wie Chrome.
